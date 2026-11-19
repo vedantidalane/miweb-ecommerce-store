@@ -1,256 +1,553 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ShopZone – Premium E-Commerce Store</title>
-  <meta name="description" content="Shop the latest products at ShopZone – electronics, fashion, home & more with great deals."/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
+
+  <meta name="description"
+    content="Shop the latest products at ShopZone – electronics, fashion, home and more with great deals." />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- ── NAVBAR ── -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="index.html"><i class="fas fa-shopping-bag me-2"></i>ShopZone</a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <form class="d-flex mx-auto search-bar" id="searchForm">
-        <input class="form-control" type="search" id="searchInput" placeholder="Search products…" aria-label="Search"/>
-        <button class="btn btn-primary" type="submit" onclick="searchProducts()"><i class="fas fa-search"></i></button>
-      </form>
-      <ul class="navbar-nav ms-3 align-items-center gap-1">
-        <li class="nav-item"><a class="nav-link" href="products.html"><i class="fas fa-th me-1"></i>Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart me-1"></i>Cart <span class="cart-badge" id="cartCount">0</span></a></li>
-        <li class="nav-item" id="authNav"><a class="nav-link" href="login.html"><i class="fas fa-user me-1"></i>Login</a></li>
-        <li class="nav-item">
-          <button class="theme-toggle ms-2" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme"></button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!-- ==========================================
+     NAVBAR
+========================================== -->
 
-<!-- ── HERO ── -->
-<section class="hero-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 fade-in">
-        <span class="hero-badge">🔥 Mega Sale – Up to 60% Off</span>
-        <h1>Shop Smart,<br/>Live Better.</h1>
-        <p class="mt-3 mb-4">Discover thousands of products from top brands. Fast delivery, easy returns, and unbeatable prices.</p>
-        <a href="products.html" class="btn-hero me-3"><i class="fas fa-shopping-bag me-2"></i>Shop Now</a>
-        <a href="#categories" class="btn btn-outline-light rounded-pill px-4">Explore Categories</a>
-      </div>
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <!-- Promo Carousel -->
-        <div id="promoCarousel" class="carousel slide promo-carousel" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&h=400&fit=crop" alt="Electronics Sale" class="d-block w-100"/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="fw-700">Electronics Sale</h5><p>Up to 50% off on gadgets</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=700&h=400&fit=crop" alt="Fashion Week" class="d-block w-100"/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="fw-700">Fashion Week</h5><p>Trendy styles at great prices</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=400&fit=crop" alt="Home Decor" class="d-block w-100"/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5 class="fw-700">Home & Living</h5><p>Transform your space</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-shopping-bag me-2"></i>ShopZone
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+
+        <form class="d-flex mx-auto search-bar" id="searchForm">
+          <input class="form-control" type="search" id="searchInput" placeholder="Search products..."
+            aria-label="Search" />
+
+          <button class="btn btn-primary" type="submit">
+            <i class="fas fa-search"></i>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
+        </form>
+
+        <ul class="navbar-nav ms-3 align-items-center gap-1">
+
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">
+              <i class="fas fa-th me-1"></i>Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="fas fa-shopping-cart me-1"></i>
+              Cart
+              <span class="cart-badge" id="cartCount">0</span>
+            </a>
+          </li>
+
+          <li class="nav-item" id="authNav">
+            <a class="nav-link" href="login.html">
+              <i class="fas fa-user me-1"></i>Login
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <button class="theme-toggle ms-2" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme">
+            </button>
+          </li>
+
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ── CATEGORIES ── -->
-<section class="py-5" id="categories">
-  <div class="container">
-    <h2 class="section-title mb-4">Shop by Category</h2>
-    <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('electronics')">
-          <div class="icon">📱</div><h6>Electronics</h6>
+
+  <!-- ==========================================
+     HERO BACKGROUND BANNER
+========================================== -->
+
+  <section class="hero-section">
+
+    <div class="container hero-content">
+
+      <div class="row align-items-center">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="col-lg-7 fade-in">
+
+          <span class="hero-badge">
+            🔥 Mega Sale – Up to 60% Off
+          </span>
+
+          <h1>
+            Shop Smart,<br />
+            Live Better.
+          </h1>
+
+          <p class="mt-3 mb-4">
+            Discover thousands of products from top brands.
+            Fast delivery, easy returns, and unbeatable prices.
+          </p>
+
+          <a href="products.html" class="btn-hero me-3">
+            <i class="fas fa-shopping-bag me-2"></i>
+            Shop Now
+          </a>
+
+          <a href="#categories" class="btn btn-outline-light rounded-pill px-4">
+            Explore Categories
+          </a>
+
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('fashion')">
-          <div class="icon">👗</div><h6>Fashion</h6>
+
+
+        <!-- RIGHT PROMOTIONAL CARD -->
+
+        <div class="col-lg-5 mt-5 mt-lg-0">
+
+          <div class="hero-highlight">
+
+            <span>EXCLUSIVE OFFERS</span>
+
+            <h2>Up to 60% OFF</h2>
+
+            <p>
+              Find your favourite products at amazing prices.
+              Explore electronics, fashion and more.
+            </p>
+
+            <a href="products.html" class="btn btn-light rounded-pill px-4">
+              Explore Now
+              <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+
+          </div>
+
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('home')">
-          <div class="icon">🏠</div><h6>Home & Living</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('sports')">
-          <div class="icon">⚽</div><h6>Sports</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('beauty')">
-          <div class="icon">💄</div><h6>Beauty</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="category-card" onclick="filterCategory('books')">
-          <div class="icon">📚</div><h6>Books</h6>
-        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── FEATURED PRODUCTS ── -->
-<section class="py-5 bg-light" style="background:var(--bg-secondary)!important;">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="section-title">Featured Products</h2>
-      <a href="products.html" class="btn btn-outline-primary rounded-pill">View All <i class="fas fa-arrow-right ms-1"></i></a>
-    </div>
-    <div class="row g-4" id="featuredProducts"></div>
-  </div>
-</section>
 
-<!-- ── PROMO BANNER ── -->
-<section class="py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="p-4 rounded-xl text-center" style="background:linear-gradient(135deg,#6c63ff,#5a52d5);color:white;">
-          <i class="fas fa-shipping-fast fa-2x mb-3"></i>
-          <h5 class="fw-700">Free Delivery</h5>
-          <p class="mb-0 opacity-75">On orders above ₹499</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 rounded-xl text-center" style="background:linear-gradient(135deg,#ff6584,#ff4da6);color:white;">
-          <i class="fas fa-undo fa-2x mb-3"></i>
-          <h5 class="fw-700">Easy Returns</h5>
-          <p class="mb-0 opacity-75">30-day return policy</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 rounded-xl text-center" style="background:linear-gradient(135deg,#ffd700,#ff8c00);color:white;">
-          <i class="fas fa-headset fa-2x mb-3"></i>
-          <h5 class="fw-700">24/7 Support</h5>
-          <p class="mb-0 opacity-75">Always here to help</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ==========================================
+     SHOP BY CATEGORY
+========================================== -->
 
-<!-- ── LATEST PRODUCTS ── -->
-<section class="py-5">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="section-title">Latest Products</h2>
-      <a href="products.html" class="btn btn-outline-primary rounded-pill">View All <i class="fas fa-arrow-right ms-1"></i></a>
-    </div>
-    <div class="row g-4" id="latestProducts"></div>
-  </div>
-</section>
+  <section class="py-5" id="categories">
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="footer-brand mb-3"><i class="fas fa-shopping-bag me-2"></i>ShopZone</div>
-        <p class="opacity-75">Your one-stop destination for quality products at unbeatable prices. Shop smart, live better.</p>
-        <div class="mt-3">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+    <div class="container">
+
+      <h2 class="section-title mb-4">
+        Shop by Category
+      </h2>
+
+      <div class="row g-3">
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('electronics')">
+            <div class="icon">📱</div>
+            <h6>Electronics</h6>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-2 col-6">
-        <h5>Quick Links</h5>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-        <a href="checkout.html">Checkout</a>
-      </div>
-      <div class="col-lg-2 col-6">
-        <h5>Categories</h5>
-        <a href="products.html?cat=electronics">Electronics</a>
-        <a href="products.html?cat=fashion">Fashion</a>
-        <a href="products.html?cat=home">Home & Living</a>
-        <a href="products.html?cat=sports">Sports</a>
-      </div>
-      <div class="col-lg-4">
-        <h5>Newsletter</h5>
-        <p class="opacity-75">Subscribe for exclusive deals and offers.</p>
-        <div class="input-group">
-          <input type="email" class="form-control" placeholder="Your email">
-          <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('fashion')">
+            <div class="icon">👗</div>
+            <h6>Fashion</h6>
+          </div>
         </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('home')">
+            <div class="icon">🏠</div>
+            <h6>Home & Living</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('sports')">
+            <div class="icon">⚽</div>
+            <h6>Sports</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('beauty')">
+            <div class="icon">💄</div>
+            <h6>Beauty</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterCategory('books')">
+            <div class="icon">📚</div>
+            <h6>Books</h6>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="footer-bottom text-center">
-      <p class="mb-0 opacity-75">© 2024 ShopZone. All rights reserved. Crafted with ❤️</p>
+  </section>
+
+
+  <!-- ==========================================
+     FEATURED PRODUCTS
+========================================== -->
+
+  <section class="py-5" style="background:var(--bg-secondary)!important;">
+
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="section-title">
+          Featured Products
+        </h2>
+
+        <a href="products.html" class="btn btn-outline-primary rounded-pill">
+          View All
+          <i class="fas fa-arrow-right ms-1"></i>
+        </a>
+
+      </div>
+
+      <div class="row g-4" id="featuredProducts"></div>
+
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- Toast Container -->
-<div class="toast-container" id="toastContainer"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
-<script>
-  // Render featured and latest products on homepage
-  document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    checkAuth();
-    renderHomeFeatured();
-    renderHomeLatest();
-  });
+  <!-- ==========================================
+     PROMO BANNER
+========================================== -->
 
-  function renderHomeFeatured() {
-    const featured = PRODUCTS.filter(p => p.featured).slice(0, 4);
-    document.getElementById('featuredProducts').innerHTML = featured.map(renderProductCard).join('');
-  }
-  function renderHomeLatest() {
-    const latest = [...PRODUCTS].sort((a,b) => b.id - a.id).slice(0, 8);
-    document.getElementById('latestProducts').innerHTML = latest.map(renderProductCard).join('');
-  }
-  function searchProducts() {
-    const q = document.getElementById('searchInput').value.trim();
-    if (q) window.location.href = `products.html?search=${encodeURIComponent(q)}`;
-  }
-  function filterCategory(cat) {
-    window.location.href = `products.html?cat=${cat}`;
-  }
-  document.getElementById('searchForm').addEventListener('submit', e => { e.preventDefault(); searchProducts(); });
-</script>
+  <section class="py-5">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="promo-box promo-purple">
+
+            <i class="fas fa-shipping-fast fa-2x mb-3"></i>
+
+            <h5 class="fw-700">Free Delivery</h5>
+
+            <p class="mb-0 opacity-75">
+              On orders above ₹499
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="promo-box promo-pink">
+
+            <i class="fas fa-undo fa-2x mb-3"></i>
+
+            <h5 class="fw-700">Easy Returns</h5>
+
+            <p class="mb-0 opacity-75">
+              30-day return policy
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="promo-box promo-orange">
+
+            <i class="fas fa-headset fa-2x mb-3"></i>
+
+            <h5 class="fw-700">24/7 Support</h5>
+
+            <p class="mb-0 opacity-75">
+              Always here to help
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+     LATEST PRODUCTS
+========================================== -->
+
+  <section class="py-5">
+
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="section-title">
+          Latest Products
+        </h2>
+
+        <a href="products.html" class="btn btn-outline-primary rounded-pill">
+          View All
+          <i class="fas fa-arrow-right ms-1"></i>
+        </a>
+
+      </div>
+
+      <div class="row g-4" id="latestProducts"></div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+     FOOTER
+========================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+
+          <div class="footer-brand mb-3">
+            <i class="fas fa-shopping-bag me-2"></i>ShopZone
+          </div>
+
+          <p class="opacity-75">
+            Your one-stop destination for quality products
+            at unbeatable prices. Shop smart, live better.
+          </p>
+
+          <div class="mt-3">
+
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-2 col-6">
+
+          <h5>Quick Links</h5>
+
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+          <a href="checkout.html">Checkout</a>
+
+        </div>
+
+
+        <div class="col-lg-2 col-6">
+
+          <h5>Categories</h5>
+
+          <a href="products.html?cat=electronics">Electronics</a>
+          <a href="products.html?cat=fashion">Fashion</a>
+          <a href="products.html?cat=home">Home & Living</a>
+          <a href="products.html?cat=sports">Sports</a>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+          <h5>Newsletter</h5>
+
+          <p class="opacity-75">
+            Subscribe for exclusive deals and offers.
+          </p>
+
+          <div class="input-group">
+
+            <input type="email" class="form-control" placeholder="Your email" />
+
+            <button class="btn btn-primary" type="button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom text-center">
+
+        <p class="mb-0 opacity-75">
+          © 2024 ShopZone. All rights reserved. Crafted with ❤️
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+     TOAST CONTAINER
+========================================== -->
+
+  <div class="toast-container" id="toastContainer"></div>
+
+
+  <!-- ==========================================
+     JAVASCRIPT FILES
+========================================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/lazyload.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+
+
+  <script>
+
+    // ==========================================
+    // HOMEPAGE INITIALIZATION
+    // ==========================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      updateCartCount();
+      checkAuth();
+
+      renderHomeFeatured();
+      renderHomeLatest();
+
+    });
+
+
+    // ==========================================
+    // FEATURED PRODUCTS
+    // ==========================================
+
+    function renderHomeFeatured() {
+
+      const featured = PRODUCTS
+        .filter(p => p.featured)
+        .slice(0, 4);
+
+      const container = document.getElementById('featuredProducts');
+
+      if (container) {
+
+        container.innerHTML = featured
+          .map(renderProductCard)
+          .join('');
+
+        if (typeof initLazyLoad === 'function') {
+          initLazyLoad();
+        }
+
+      }
+    }
+
+
+    // ==========================================
+    // LATEST PRODUCTS
+    // ==========================================
+
+    function renderHomeLatest() {
+
+      const latest = [...PRODUCTS]
+        .sort((a, b) => b.id - a.id)
+        .slice(0, 8);
+
+      const container = document.getElementById('latestProducts');
+
+      if (container) {
+
+        container.innerHTML = latest
+          .map(renderProductCard)
+          .join('');
+
+        if (typeof initLazyLoad === 'function') {
+          initLazyLoad();
+        }
+
+      }
+    }
+
+
+    // ==========================================
+    // PRODUCT SEARCH
+    // ==========================================
+
+    function searchProducts() {
+
+      const q = document.getElementById('searchInput').value.trim();
+
+      if (q) {
+
+        window.location.href =
+          `products.html?search=${encodeURIComponent(q)}`;
+
+      }
+
+    }
+
+
+    // ==========================================
+    // CATEGORY FILTER
+    // ==========================================
+
+    function filterCategory(cat) {
+
+      window.location.href = `products.html?cat=${cat}`;
+
+    }
+
+
+    // ==========================================
+    // SEARCH FORM SUBMIT
+    // ==========================================
+
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+
+      e.preventDefault();
+      searchProducts();
+
+    });
+
+  </script>
+
 </body>
+
 </html>
